@@ -34,4 +34,7 @@ jobs:
 
             cd ~/cream
 
-            docker-compose -f docker-compose.dev.yml restart cream-frontend
+            docker-compose -f docker-compose.dev.yml stop cream-frontend
+            docker-compose -f docker-compose.dev.yml rm -f cream-frontend
+
+            docker-compose -f docker-compose.dev.yml up -d cream-frontend
