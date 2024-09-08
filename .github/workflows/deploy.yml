@@ -30,6 +30,8 @@ jobs:
               echo ${{ secrets.SSH_WORKER_PASSWORD }} | sudo -S rm -rf "$DIRECTORY"
             fi
 
-            cd ~/cream && git pull
+            cd ~/cream/cream-frontend && git fetch && git checkout dev && git pull
+
+            cd ~/cream
 
             docker-compose -f docker-compose.dev.yml restart cream-frontend
