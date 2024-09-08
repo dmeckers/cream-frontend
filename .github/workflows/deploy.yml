@@ -36,6 +36,6 @@ jobs:
 
             docker-compose stop cream-frontend
 
-            docker remove $(docker ps -a | grep cream-frontend | awk '{print $1})'
+            docker rm $(docker ps -a | grep cream-frontend | awk '{print $1}')
 
             docker-compose -f docker-compose.dev.yml up -d cream-frontend
