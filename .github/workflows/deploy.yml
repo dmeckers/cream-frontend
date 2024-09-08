@@ -38,4 +38,6 @@ jobs:
 
             docker rm $(docker ps -a | grep cream-frontend | awk '{print $1}')
 
-            docker-compose -f docker-compose.dev.yml up -d cream-frontend
+            docker-compose -f docker-compose.dev.yml up -d --build cream-frontend
+
+            docker-compose restart cream-nginx
