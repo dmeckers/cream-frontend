@@ -1,4 +1,4 @@
-name: Deploy cream frontend
+name: Deploy cream api
 
 on:
   push:
